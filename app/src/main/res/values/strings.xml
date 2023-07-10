@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+    <string name="login_screen_app_title">Chaussure</string>
+    <string name="login_screen_subtitle">Experience the world\'s best shoe store app</string>
+    <string name="email_label_text">Email:</string>
+    <string name="email_input_hint">Enter your email</string>
+    <string name="password_label_text">Password:</string>
+    <string name="password_input_hint">Enter your password</string>
+    <string name="login_button_text">Login</string>
+    <string name="create_account_button_text">Create Account</string>
 </resources>
