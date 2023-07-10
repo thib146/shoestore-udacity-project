@@ -8,4 +8,9 @@
     <string name="password_input_hint">Enter your password</string>
     <string name="login_button_text">Login</string>
     <string name="create_account_button_text">Create Account</string>
+    <string name="welcome_title_text_1">Welcome to</string>
+    <string name="welcome_title_text_2">Chaussure</string>
+    <string name="welcome_screen_description_text">Store your favorite shoes so you can order them again or share them to your friends!</string>
+    <string name="welcome_next_button_text">Next</string>
+    <string name="welcome_screen_shoe_icon_description_text">Colored shoe icon</string>
 </resources>
