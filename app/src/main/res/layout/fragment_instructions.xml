@@ -6,11 +6,11 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/welcome_title_text_1"
+        android:id="@+id/instructions_title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/welcome_title_text_1"
+        android:text="@string/instructions_title_text"
         android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,51 +18,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/welcome_title_text_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="cursive"
-        android:text="@string/welcome_title_text_2"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_title_text_1" />
-
     <ImageView
-        android:id="@+id/welcome_screen_shoe_image"
+        android:id="@+id/instructions_screen_illustration"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/welcome_screen_description_label"
+        app:layout_constraintBottom_toTopOf="@+id/instructions_screen_description_label"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         app:srcCompat="@drawable/sneakers"
-        android:contentDescription="@string/welcome_screen_shoe_icon_description_text" />
+        android:contentDescription="@string/instructions_screen_illustration_description" />
 
     <TextView
-        android:id="@+id/welcome_screen_description_label"
+        android:id="@+id/instructions_screen_description_label"
         android:layout_width="281dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/welcome_screen_description_text"
+        android:text="@string/instructions_screen_desctiption_text"
         android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_screen_shoe_image"
+        app:layout_constraintTop_toBottomOf="@+id/instructions_screen_illustration"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
-        android:id="@+id/welcome_next_button"
+        android:id="@+id/instructions_next_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="@string/welcome_next_button_text"
+        android:text="@string/instructions_next_button_test"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

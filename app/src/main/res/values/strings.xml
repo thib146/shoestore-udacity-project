@@ -13,4 +13,8 @@
     <string name="welcome_screen_description_text">Store your favorite shoes so you can order them again or share them to your friends!</string>
     <string name="welcome_next_button_text">Next</string>
     <string name="welcome_screen_shoe_icon_description_text">Colored shoe icon</string>
+    <string name="instructions_title_text">How to use the app</string>
+    <string name="instructions_screen_illustration_description">An illustration of the app\'s UI to add a new shoe item to the list.</string>
+    <string name="instructions_screen_desctiption_text">Add a new shoe by tapping on the + sign, then enter its details in order to save it</string>
+    <string name="instructions_next_button_test">Let\'s go!</string>
 </resources>
