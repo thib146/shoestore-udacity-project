@@ -17,4 +17,6 @@
     <string name="instructions_screen_illustration_description">An illustration of the app\'s UI to add a new shoe item to the list.</string>
     <string name="instructions_screen_desctiption_text">Add a new shoe by tapping on the + sign, then enter its details in order to save it</string>
     <string name="instructions_next_button_test">Let\'s go!</string>
+    <string name="shoelist_fab_description">Add a new shoe to the list</string>
+    <string name="logout_menu_text">Logout</string>
 </resources>
