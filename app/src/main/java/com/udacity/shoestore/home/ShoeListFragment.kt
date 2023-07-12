@@ -12,6 +12,7 @@ import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
@@ -34,6 +35,10 @@ class ShoeListFragment: Fragment() {
         )
 
         setupMenu()
+
+        binding.shoelistFab.setOnClickListener {
+            view?.findNavController()?.navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
+        }
 
         return binding.root
     }

@@ -19,4 +19,10 @@
     <string name="instructions_next_button_test">Let\'s go!</string>
     <string name="shoelist_fab_description">Add a new shoe to the list</string>
     <string name="logout_menu_text">Logout</string>
+    <string name="shoe_detail_screen_title">Add a new shoe</string>
+    <string name="shoe_detail_input_name_hint">Shoe name</string>
+    <string name="shoe_detail_input_company_hint">Shoe company</string>
+    <string name="shoe_detail_input_size_hint">Shoe size</string>
+    <string name="shoe_detail_cancel_button_text">Cancel</string>
+    <string name="shoe_detail_save_button_text">Save</string>
 </resources>
