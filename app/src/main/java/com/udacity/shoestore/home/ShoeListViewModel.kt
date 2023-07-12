@@ -11,4 +11,8 @@ class ShoeListViewModel: ViewModel() {
     val shoeList: LiveData<List<Shoe>>
         get() = _shoeList
 
+    init {
+        _shoeList.value = listOf()
+    }
+
 }

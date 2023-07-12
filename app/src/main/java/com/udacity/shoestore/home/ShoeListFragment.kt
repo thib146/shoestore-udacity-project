@@ -9,10 +9,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.FragmentShoeListBinding
 
 class ShoeListFragment: Fragment() {
+
+    private lateinit var viewModel: ShoeListViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,6 +26,19 @@ class ShoeListFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        val binding: FragmentShoeListBinding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_shoe_list,
+            container,
+            false
+        )
+
+        setupMenu()
+
+        return binding.root
+    }
+
+    private fun setupMenu() {
         val menuHost: MenuHost = requireActivity()
         menuHost.addMenuProvider(object: MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
@@ -29,15 +48,13 @@ class ShoeListFragment: Fragment() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
                     R.id.menu_item_logout -> {
-                        // TODO: add viewModel method call
+                        findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
                         true
                     }
                     else -> false
                 }
             }
-        })
-
-        return super.onCreateView(inflater, container, savedInstanceState)
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
 }
