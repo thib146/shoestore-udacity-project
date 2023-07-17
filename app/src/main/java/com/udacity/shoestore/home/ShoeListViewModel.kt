@@ -12,7 +12,10 @@ class ShoeListViewModel: ViewModel() {
         get() = _shoeList
 
     init {
-        _shoeList.value = listOf()
+        _shoeList.value = listOf(
+            Shoe("Air Sneaker 146", 43.0, "Nayke", ""),
+            Shoe("Rando 3000", 42.5, "ProHiker", ""),
+            Shoe("BoolderMax", 41.0, "SlimyGeiko", ""))
     }
 
 }

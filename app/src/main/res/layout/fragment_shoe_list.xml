@@ -31,36 +31,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/shoe_image"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:contentDescription="@string/shoe_item_image_description"
-                    android:src="@drawable/sneakers"/>
-
-                <TextView
-                    android:id="@+id/shoe_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Air Sneakers 146"/>
-
-                <TextView
-                    android:id="@+id/shoe_company"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Nike"/>
-
-                <TextView
-                    android:id="@+id/shoe_size"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="43"/>
-
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_marginTop="8dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
             </LinearLayout>
         </ScrollView>
 
