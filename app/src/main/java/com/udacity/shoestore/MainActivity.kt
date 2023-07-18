@@ -2,17 +2,14 @@ package com.udacity.shoestore
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ViewModelProvider
 import com.udacity.shoestore.databinding.ActivityMainBinding
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var viewModel: ActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,15 +18,6 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-
+        viewModel = ViewModelProvider(this)[ActivityViewModel::class.java]
     }
-
-//    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
-//        return super.onPrepareOptionsMenu(menu)
-//    }
-
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.shoelist_menu, menu)
-//        return true
-//    }
 }

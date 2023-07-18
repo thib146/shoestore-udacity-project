@@ -7,18 +7,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.navArgs
+import com.udacity.shoestore.ActivityViewModel
+import com.udacity.shoestore.MainActivity
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailsBinding
-import com.udacity.shoestore.home.ShoeListFragmentArgs
 import com.udacity.shoestore.models.Shoe
 import java.lang.NumberFormatException
 
 class ShoeDetailFragment: Fragment() {
 
-    private lateinit var viewModel: ShoeDetailViewModel
+    private lateinit var activityViewModel: ActivityViewModel
 
     private lateinit var binding: FragmentShoeDetailsBinding
 
@@ -35,16 +34,10 @@ class ShoeDetailFragment: Fragment() {
             false
         )
 
-        viewModel = ViewModelProvider(this)[ShoeDetailViewModel::class.java]
-
-        // Get args using by navArgs property delegate
-        val shoeListFragmentArgs by navArgs<ShoeListFragmentArgs>()
-        val shoeList: Array<Shoe> = shoeListFragmentArgs.shoeList
-        viewModel.addNewShoe(shoeList)
+        activityViewModel = (activity as MainActivity).viewModel
 
         binding.shoeDetailCancelButton.setOnClickListener {
-            val latestShoeList: Array<Shoe> = viewModel.shoeList.value?.toTypedArray() ?: arrayOf()
-            view?.findNavController()?.navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment(latestShoeList))
+            view?.findNavController()?.navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
         }
 
         binding.shoeDetailSaveButton.setOnClickListener {
@@ -65,14 +58,12 @@ class ShoeDetailFragment: Fragment() {
             try {
                 val shoeSizeDouble = shoeSizeString.toDouble()
                 val newShoe = Shoe(shoeName, shoeSizeDouble, shoeCompany, "")
-                var latestShoeList: Array<Shoe> = viewModel.shoeList.value?.toTypedArray() ?: arrayOf()
-                latestShoeList = latestShoeList.plus(newShoe)
+                activityViewModel.addNewShoe(newShoe)
 
-                view?.findNavController()?.navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment(latestShoeList))
+                view?.findNavController()?.navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
             } catch (e: NumberFormatException) {
                 Toast.makeText(requireActivity(), getString(R.string.shoe_detail_size_field_wrong_format), Toast.LENGTH_LONG).show()
             }
-
         }
     }
 }

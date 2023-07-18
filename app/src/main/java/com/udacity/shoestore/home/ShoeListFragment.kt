@@ -13,17 +13,16 @@ import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
+import com.udacity.shoestore.ActivityViewModel
+import com.udacity.shoestore.MainActivity
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
-import com.udacity.shoestore.models.Shoe
 
 class ShoeListFragment: Fragment() {
 
-    private lateinit var viewModel: ShoeListViewModel
+    private lateinit var activityViewModel: ActivityViewModel
 
     private lateinit var binding: FragmentShoeListBinding
 
@@ -40,25 +39,15 @@ class ShoeListFragment: Fragment() {
             false
         )
 
-        viewModel = ViewModelProvider(this)[ShoeListViewModel::class.java]
+        activityViewModel = (activity as MainActivity).viewModel
 
         setupMenu()
 
-        // Get args using by navArgs property delegate
-        val shoeListFragmentArgs by navArgs<ShoeListFragmentArgs>()
-        val shoeList: Array<Shoe> = shoeListFragmentArgs.shoeList
-        if (shoeList.isEmpty()) {
-            viewModel.addInitialShoeList() // Add 3 default items the first time
-        } else {
-            viewModel.addNewShoe(shoeList)
-        }
-
         binding.shoelistFab.setOnClickListener {
-            val latestShoeList: Array<Shoe> = viewModel.shoeList.value?.toTypedArray() ?: arrayOf()
-            view?.findNavController()?.navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment(latestShoeList))
+            view?.findNavController()?.navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
 
-        viewModel.shoeList.observe(this.viewLifecycleOwner) {
+        activityViewModel.shoeList.observe(this.viewLifecycleOwner) {
             inflateShoeList()
         }
 
@@ -85,7 +74,7 @@ class ShoeListFragment: Fragment() {
     }
 
     private fun inflateShoeList() {
-        for (shoeItem in viewModel.shoeList.value!!.toMutableList()) {
+        for (shoeItem in activityViewModel.shoeList.value!!.toMutableList()) {
             val newShoeItem = createNewShoeItem(shoeItem.name, shoeItem.company, shoeItem.size)
             binding.shoelistItem.addView(newShoeItem)
         }
@@ -100,5 +89,4 @@ class ShoeListFragment: Fragment() {
 
         return view
     }
-
 }
