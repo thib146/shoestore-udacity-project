@@ -37,7 +37,7 @@ class ShoeDetailFragment: Fragment() {
         activityViewModel = (activity as MainActivity).viewModel
 
         binding.shoeDetailCancelButton.setOnClickListener {
-            view?.findNavController()?.navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+            view?.findNavController()?.navigateUp()
         }
 
         binding.shoeDetailSaveButton.setOnClickListener {
