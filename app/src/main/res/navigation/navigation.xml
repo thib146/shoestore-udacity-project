@@ -54,6 +54,9 @@
             app:destination="@id/shoeDetailFragment"
             app:enterAnim="@anim/slide_in_bottom"
             app:popEnterAnim="@anim/slide_out_bottom" />
+        <argument
+            android:name="ShoeList"
+            app:argType="com.udacity.shoestore.models.Shoe[]" />
     </fragment>
     <fragment
         android:id="@+id/shoeDetailFragment"
@@ -63,5 +66,8 @@
             android:id="@+id/action_shoeDetailFragment_to_shoeListFragment"
             app:destination="@id/shoeListFragment"
             app:exitAnim="@anim/slide_out_bottom" />
+        <argument
+            android:name="ShoeList"
+            app:argType="com.udacity.shoestore.models.Shoe[]" />
     </fragment>
 </navigation>

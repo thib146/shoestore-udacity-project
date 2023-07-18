@@ -13,10 +13,10 @@ import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.models.Shoe
@@ -44,13 +44,23 @@ class ShoeListFragment: Fragment() {
 
         setupMenu()
 
-        binding.shoelistFab.setOnClickListener {
-            view?.findNavController()?.navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
+        // Get args using by navArgs property delegate
+        val shoeListFragmentArgs by navArgs<ShoeListFragmentArgs>()
+        val shoeList: Array<Shoe> = shoeListFragmentArgs.shoeList
+        if (shoeList.isEmpty()) {
+            viewModel.addInitialShoeList() // Add 3 default items the first time
+        } else {
+            viewModel.addNewShoe(shoeList)
         }
 
-        viewModel.shoeList.observe(this.viewLifecycleOwner, Observer { shoeList ->
+        binding.shoelistFab.setOnClickListener {
+            val latestShoeList: Array<Shoe> = viewModel.shoeList.value?.toTypedArray() ?: arrayOf()
+            view?.findNavController()?.navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment(latestShoeList))
+        }
+
+        viewModel.shoeList.observe(this.viewLifecycleOwner) {
             inflateShoeList()
-        })
+        }
 
         return binding.root
     }
