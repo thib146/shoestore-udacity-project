@@ -34,4 +34,9 @@
         <item name="android:textSize">34sp</item>
     </style>
 
+    <style name="button_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/colorAccent</item>
+    </style>
+
 </resources>
