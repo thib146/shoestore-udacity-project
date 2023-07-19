@@ -37,12 +37,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/email_label_text"
-            android:textColor="@color/black"
-            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/email_input"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintVertical_chainStyle="packed"
+            style="@style/label_textviews" />
 
         <EditText
             android:id="@+id/email_input"
@@ -63,6 +62,7 @@
 
         <TextView
             android:id="@+id/password_label"
+            style="@style/label_textviews"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"

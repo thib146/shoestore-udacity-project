@@ -29,4 +29,7 @@
     <string name="shoe_item_text_divider">/</string>
     <string name="shoe_detail_fields_empty_error_message">One of the fields is empty! Please fill in all the fields</string>
     <string name="shoe_detail_size_field_wrong_format">The shoe size should be a number!</string>
+    <string name="shoe_name_label">Shoe Name:</string>
+    <string name="shoe_company_label">Shoe Company:</string>
+    <string name="shoe_size_label">Shoe Size:</string>
 </resources>

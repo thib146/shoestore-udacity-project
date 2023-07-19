@@ -21,11 +21,15 @@ class ShoeDetailFragment: Fragment() {
 
     private lateinit var binding: FragmentShoeDetailsBinding
 
+    var shoeName: String = ""
+    var shoeCompany: String = ""
+    var shoeSizeString: String = ""
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = DataBindingUtil.inflate(
             inflater,
@@ -33,6 +37,8 @@ class ShoeDetailFragment: Fragment() {
             container,
             false
         )
+
+        binding.shoeDetailFragment = this
 
         activityViewModel = (activity as MainActivity).viewModel
 
@@ -48,10 +54,6 @@ class ShoeDetailFragment: Fragment() {
     }
 
     private fun saveShoeAndNavigateToShoeListScreen() {
-        val shoeName = binding.shoeNameInput.text.toString()
-        val shoeCompany = binding.shoeCompanyInput.text.toString()
-        val shoeSizeString = binding.shoeSizeInput.text.toString()
-
         if (shoeName.isEmpty() ||  shoeCompany.isEmpty() || shoeSizeString.isEmpty()) {
             Toast.makeText(requireActivity(), getString(R.string.shoe_detail_fields_empty_error_message), Toast.LENGTH_LONG).show()
         } else {

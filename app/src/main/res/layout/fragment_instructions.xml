@@ -12,12 +12,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/instructions_title_text"
-            android:textColor="@color/black"
-            android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/fullscreen_title_text" />
 
         <ImageView
             android:id="@+id/instructions_screen_illustration"

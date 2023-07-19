@@ -8,6 +8,7 @@
 
         <TextView
             android:id="@+id/welcome_title_text_1"
+            style="@style/fullscreen_title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -50,13 +51,12 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:text="@string/welcome_screen_description_text"
-            android:textAlignment="center"
-            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/welcome_screen_shoe_image"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintVertical_chainStyle="packed"
+            style="@style/fullscreen_description_text" />
 
         <Button
             android:id="@+id/welcome_next_button"
