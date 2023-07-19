@@ -1,52 +1,15 @@
-# README Template
+# ShoeStore Project with Udacity
 
-Below is a template provided for use when building your README file for students.
+This app is my submission for an exercise project app part of the "Android Nanodegree" online class with Udacity.com.
 
-# Project Title
+It showcases simple usage of the MVVM architecture, navigation, layouts, databinding, single-activity.
 
-Project description goes here.
+# Project Instructions
 
-## Getting Started
+The app contains 5 screens in this order:
 
-Instructions for how to get a copy of the project running on your local machine.
-
-### Dependencies
-
-```
-Examples here
-```
-
-### Installation
-
-Step by step explanation of how to get a dev environment running.
-
-List out the steps
-
-```
-Give an example here
-```
-
-## Testing
-
-Explain the steps needed to run any automated tests
-
-### Break Down Tests
-
-Explain what each test does and why
-
-```
-Examples here
-```
-## Project Instructions
-
-This section should contain all the student deliverables for this project.
-
-## Built With
-
-* [Item1](www.item1.com) - Description of item
-* [Item2](www.item2.com) - Description of item
-* [Item3](www.item3.com) - Description of item
-
-Include all items used to build project.
-
-## License
+* Login screen: both bottom buttons don't do anything related to logging the user in but simply navigate to the next screen
+* Welcome screen: a simple app welcome screen with an illustration
+* Instructions screen: a simple instructions screen with an illustration
+* Shoe List screen: a scrollview screen containing 3 default "Shoe" items and a Floating Action Button
+* Shoe Details screen: this screen allows the user to create a new "Shoe" item
